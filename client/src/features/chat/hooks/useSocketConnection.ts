@@ -7,7 +7,6 @@ const useSocketConnection = () => {
     }
 
     return () => {
-      console.log("IM DISCONNECTING");
       socket.disconnect();
     };
   }, []);

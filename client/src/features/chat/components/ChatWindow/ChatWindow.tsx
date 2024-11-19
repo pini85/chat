@@ -15,7 +15,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ selectedRoom, isMobile }) => {
   const loaderData = useLoaderData() as { messages?: Message[] } | undefined;
 
   const initialMessages = loaderData?.messages || [];
-  console.log("initialMessages", initialMessages);
+
   const [newMessage, setNewMessage] = useState("");
 
   const { user } = useAuthContext();
