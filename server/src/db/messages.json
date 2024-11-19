@@ -55,8 +55,10 @@
       "user": "Johnny",
       "content": "dhdghgdgg",
       "timestamp": "2024-11-19T19:12:05.983Z",
-      "readBy": [],
-      "allRead": false
+      "readBy": [
+        "Timmy"
+      ],
+      "allRead": true
     },
     {
       "id": "69b46d9d-7595-41a6-a480-89782ab502a0",
