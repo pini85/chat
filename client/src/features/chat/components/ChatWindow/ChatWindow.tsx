@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 import { Box } from "@mui/material";
 
 import { useAuthContext } from "@/features/authentication/hooks/useAuthContext";
 import { useChatSocket } from "@/features/chat/hooks/useChatSocket";
 import { ChatWindowProps } from "@/features/chat/types";
-import { Message } from "@shared/types";
+// import { Message } from "@shared/types";
 
 import ChatWindowHeader from "./components/ChatWindowHeader";
 import ChatMessages from "@/features/chat/components/ChatWindow/components/ChatMessages";
