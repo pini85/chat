@@ -1,5 +1,4 @@
-import React from "react";
-import { Box, Typography, Container, Button } from "@mui/material";
+import { Typography, Container } from "@mui/material";
 
 export const Home = () => {
   return (
