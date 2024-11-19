@@ -1,13 +1,6 @@
 import { QueryClient } from "@tanstack/react-query";
 import { LoaderFunctionArgs, defer } from "react-router-dom";
-
-export const fetchMessagesByRoom = async (roomId: string): Promise<any[]> => {
-  const response = await fetch(`/api/messages/${roomId}`);
-  if (!response.ok) {
-    throw new Error("Failed to fetch messages");
-  }
-  return response.json();
-};
+import { fetchMessagesByRoom } from "@/features/chat/services/chatService";
 
 export const chatMessagesLoader =
   (queryClient: QueryClient) =>
