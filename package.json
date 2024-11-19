@@ -1,0 +1,22 @@
+{
+  "name": "morty-hybrid-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "shared"
+  ],
+  "scripts": {
+    "build:shared": "cd shared && tsc --build",
+    "build:server": "cd server && tsc --build",
+    "build:client": "cd client && tsc --build",
+    "build": "npm run build:shared && npm run build:server && npm run build:client",
+    "start:server": "cd server && npm run dev",
+    "start:client": "cd client && npm run dev",
+    "start": "concurrently -n 'SERVER,CLIENT' -c 'bgBlue.bold,bgMagenta.bold' \"npm run start:server\" \"npm run start:client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
