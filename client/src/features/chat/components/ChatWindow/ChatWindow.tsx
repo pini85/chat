@@ -10,11 +10,13 @@ import { Message } from "@shared/types";
 import ChatWindowHeader from "./components/ChatWindowHeader";
 import ChatMessages from "@/features/chat/components/ChatWindow/components/ChatMessages";
 import ChatInput from "./components/ChatInput";
+import useRoomMessages from "@/features/chat/hooks/queries/useRoomMessages";
 
 const ChatWindow: React.FC<ChatWindowProps> = ({ selectedRoom, isMobile }) => {
-  const loaderData = useLoaderData() as { messages?: Message[] } | undefined;
+  //!todo: need to inital load with the loader and everyother request with useroom messages
+  // const loaderData = useLoaderData() as { messages?: Message[] } | undefined;
 
-  const initialMessages = loaderData?.messages || [];
+  const { data: roomMessages = [] } = useRoomMessages(selectedRoom);
 
   const [newMessage, setNewMessage] = useState("");
 
@@ -23,7 +25,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ selectedRoom, isMobile }) => {
   const { messages, sendMessage, markMessageAsRead } = useChatSocket({
     selectedRoom,
     user,
-    initialMessages,
+    initialMessages: roomMessages,
   });
 
   const handleSendMessage = () => {
